@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/loganbickmore/rpmbuild/actions"><img alt="typescript-action status" src="https://github.com/loganbickmore/rpmbuild/workflows/build-test/badge.svg"></a>
-  <a href="https://github.com/loganbickmore/rpmbuild/actions"><img alt="typescript-action status" src="https://github.com/loganbickmore/rpmbuild/workflows/build-release/badge.svg"></a>
+  <a href="https://github.com/safecu/rpmbuild/actions"><img alt="typescript-action status" src="https://github.com/safecu/rpmbuild/workflows/build-test/badge.svg"></a>
+  <a href="https://github.com/safecu/rpmbuild/actions"><img alt="typescript-action status" src="https://github.com/safecu/rpmbuild/workflows/build-release/badge.svg"></a>
 </p>
 
 # GitHub Action - Build RPM Package
@@ -43,7 +43,7 @@ jobs:
 
     - name: Build RPM
       id: rpm_build
-      uses: loganbickmore/rpmbuild@v1.0.0
+      uses: safecu/rpmbuild@v1.0.0
       with:
         spec_file: 'hello-typescript.spec'
         src_archive: 'artifacts/hello-typescript.tar.gz'

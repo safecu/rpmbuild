@@ -1,4 +1,4 @@
-name: 'loganbickmore/rpmbuild'
+name: 'safecu/rpmbuild'
 description: 'Build RPM packages'
 author: 'loganbickmore'
 inputs:
