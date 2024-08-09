@@ -1,8 +1,10 @@
 FROM centos:7
 
+WORKDIR /home
+
 ENV FLAVOR=rpmbuild OS=centos DIST=el7
 
-COPY . .
+COPY . /home
 
 RUN yum install -y rpm-build rpmdevtools gcc make coreutils python
 RUN yum -y clean all
@@ -13,4 +15,4 @@ RUN tar --strip-components 1 -xvf node-v* -C /usr/local
 
 RUN npm install --production
 
-ENTRYPOINT ["node", "/lib/main.js"]
+ENTRYPOINT ["node", "lib/main.js"]
