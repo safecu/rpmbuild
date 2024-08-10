@@ -1,10 +1,10 @@
 FROM centos:7
 
-WORKDIR /home
+WORKDIR /github/workspace
 
 ENV FLAVOR=rpmbuild OS=centos DIST=el7
 
-COPY . /home
+COPY . /github/workspace
 
 RUN sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/*.repo && \
     sed -i s/^#.*baseurl=http/baseurl=https/g /etc/yum.repos.d/*.repo && \
