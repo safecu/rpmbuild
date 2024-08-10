@@ -6,6 +6,11 @@ ENV FLAVOR=rpmbuild OS=centos DIST=el7
 
 COPY . /home
 
+RUN sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/*.repo && \
+    sed -i s/^#.*baseurl=http/baseurl=https/g /etc/yum.repos.d/*.repo && \
+    sed -i s/^mirrorlist=http/#mirrorlist=https/g /etc/yum.repos.d/*.repo
+RUN yum clean all; yum makecache
+
 RUN yum install -y rpm-build rpmdevtools gcc make coreutils python
 RUN yum -y clean all
 
